@@ -389,6 +389,13 @@ deno_version = 2
 # [edge_runtime.secrets]
 # secret_key = "env(SECRET_VALUE)"
 
+# La verificación del JWT en la puerta de enlace no es compatible con las nuevas
+# claves de firma de Supabase, así que la hace la propia función: getClaims()
+# valida firma y vigencia, y la RPC edge_rate_limit vuelve a exigir la sesión en
+# la BD antes de llamar a ningún proveedor.
+[functions.metadata]
+verify_jwt = false
+
 [analytics]
 enabled = true
 port = 54327
