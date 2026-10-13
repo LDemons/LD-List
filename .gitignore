@@ -1,15 +1,29 @@
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-.pytest_cache/
-.ruff_cache/
-
 # Node
 node_modules/
 dist/
+*.tsbuildinfo
 
-# Entorno
+# Entorno y secretos: nunca se suben
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+signing_keys*.json
+
+# Volcados y respaldos de la base de datos
+*.dump
+*.backup
+backups/
+
+# Supabase (estado local del CLI, incluye el ID del proyecto vinculado)
+supabase/.temp/
+supabase/.branches/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
